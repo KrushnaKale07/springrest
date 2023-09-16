@@ -1,5 +1,7 @@
 package com.krushnas.springrest.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +18,24 @@ public class StudentService {
 		StudentPOJO student = repository.addStudent(pojo);
 		return student;
 	}
-	
+
 	public StudentPOJO searchStudent(int id) {
 		StudentPOJO student = repository.searchStudent(id);
 		return student;
 	}
 
+	public List<StudentPOJO> searchAllStudent() {
+		List<StudentPOJO> students = repository.searchAllStudents();
+		return students;
+	}
+
+	public StudentPOJO updateStudent(StudentPOJO pojo) {
+		StudentPOJO student = repository.updateStudent(pojo);
+		return student;
+	}
+
+	public StudentPOJO removeStudent(int id) {
+		StudentPOJO student = repository.removeStudent(id);
+		return student;
+	}
 }
